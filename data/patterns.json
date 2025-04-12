@@ -43,36 +43,36 @@
     ]
   },
   {
-    "id": "suspicious_investment_promo_v4",
-    "name": "怪しい投資勧誘 V4 (複合・強気スコア)",
+    "id": "suspicious_investment_promo_v5",
+    "name": "怪しい投資勧誘 V5 (複合・強気スコア・URL非依存)",
     "baseScore": 0,
     "required": ["topic", "inducement"],
     "bonusThreshold": 3,
-    "bonusScore": 3,
+    "bonusScore": 3.5,
     "components": {
       "topic": { "score": 1, "phrases": ["投資", "株", "FX", "仮想通貨", "資産運用", "トレード", "バイナリー"] },
       "easy_profit": { "score": 2.5, "phrases": ["必ず儲かる", "絶対稼げる", "誰でも簡単", "知識不要", "スキル不要", "放置で稼げる", "不労所得"] },
-      "inducement": { "score": 2, "phrases": ["LINE登録", "ライン登録", "プロフ見て", "リンクから", "DMください", "個別指導", "限定募集", "無料プレゼント", "詳細はコチラ", "クリック"] },
+      "inducement": { "score": 2, "phrases": ["LINE登録", "ライン登録", "プロフ見て", "DMください", "個別指導", "限定募集", "無料プレゼント", "詳細はコチラ"] },
       "high_return": { "score": 2.5, "phrases": ["月利", "%達成", "倍になる", "爆益", "億り人"] },
       "urgency": { "score": 1, "phrases": ["今だけ", "急げ", "残りわずか", "期間限定", "早い者勝ち"] }
     }
   },
   {
-    "id": "overly_praising_mention_v3",
-    "name": "メンション付き過剰称賛 V3 (複合・強気スコア)",
-    "baseScore": 1,
+    "id": "overly_praising_mention_v4",
+    "name": "メンション付き過剰称賛 V4 (複合・誤検知対策)",
+    "baseScore": 0.5,
     "required": ["praise"],
     "bonusThreshold": 2,
-    "bonusScore": 2.5,
+    "bonusScore": 2,
     "components": {
-      "praise": { "score": 1.5, "phrases": ["素晴らしい", "さすが", "おかげ", "助言", "感謝", "感銘", "敬服", "目から鱗", "指南", "サポート", "的確", "説得力", "深い", "新鮮", "見事", "クリア", "すごい洞察力", "価値があります", "鋭い観察眼", "分析センス"] },
+      "praise": { "score": 1, "phrases": ["素晴らしい", "さすが", "おかげ", "助言", "感銘", "敬服", "目から鱗", "指南", "サポート", "的確", "説得力", "深い", "新鮮", "見事", "クリア", "すごい洞察力", "価値があります", "鋭い観察眼", "分析センス", "大感謝"] },
       "topic": { "score": 1, "phrases": ["投資", "株", "相場", "市場", "戦略", "アドバイス", "分析", "予測", "見解", "考察", "判断", "読み解き方", "解説", "意見"] },
-      "gratitude_result": { "score": 2, "phrases": ["立ち直れた", "救われた", "役立ちました", "なければ", "あってこそ", "言葉では表せません", "清算ができました", "ストレスから解放", "トラブルを克服", "自由になれました", "金銭的な重荷を下ろせました", "資金繰りが改善"] }
+      "gratitude_result": { "score": 1.5, "phrases": ["立ち直れた", "救われた", "役立ちました", "なければ", "あってこそ", "言葉では表せません", "清算ができました", "ストレスから解放", "トラブルを克服", "自由になれました", "金銭的な重荷を下ろせました", "資金繰りが改善", "ありがとう"] }
     }
   },
   {
-    "id": "unrealistic_success_rate_high_v2",
-    "name": "非現実的な成功率アピール（スコア高 V2）",
+    "id": "unrealistic_success_rate_high_v3",
+    "name": "非現実的な成功率アピール（スコア高 V3）",
     "score": 4,
     "triggerPhrases": [
       "85%以上", "８５％以上", "85%超", "８５％超", "85%を下回ることはありません", "ヒット率を維持",
@@ -83,12 +83,12 @@
     ]
   },
   {
-    "id": "suspicious_success_story_v3",
-    "name": "怪しい成功体験談 V3 (複合・強気スコア)",
+    "id": "suspicious_success_story_v4",
+    "name": "怪しい成功体験談 V4 (複合・強気スコア)",
     "baseScore": 0.5,
     "required": ["result", "easy_action"],
     "bonusThreshold": 3,
-    "bonusScore": 3,
+    "bonusScore": 3.5,
     "components": {
       "result": { "score": 2.5, "phrases": ["儲け", "儲かった", "黒字", "万円", "借金.*解放", "返済できた", "窮状.*脱した", "利益出", "利益を上げ"] },
       "easy_action": { "score": 1.5, "phrases": ["真似てみたら", "従ってみたら", "一か八か", "教えられ", "推奨された", "言われた通り", "アドバイスされた", "賭けてみたら", "資金を入れたら", "実践したら", "採用してみたら", "活用してみたら", "実行してみたら", "信じてみたら"] },
@@ -106,17 +106,5 @@
     "name": "テンプレート「〜万円儲かりました、ありがとう」",
     "score": 2.5,
     "triggerPhrases": ["万円儲かりました、ありがとう！", "これからも彼についていくつもりだ"]
-  },
-  {
-    "id": "url_shortener_high",
-    "name": "短縮URL (リスク高)",
-    "score": 2,
-    "triggerPhrases": ["bit.ly", "t.co/", "is.gd", "goo.gl", "ow.ly", "buff.ly", "tinyurl.com", "mtlnk.net"]
-  },
-  {
-    "id": "suspicious_domain_very_high",
-    "name": "怪しいドメイン (リスク超高)",
-    "score": 4,
-    "triggerPhrases": [".xyz", ".top", ".club", ".site", ".online", ".live"]
   }
 ]
