@@ -235,7 +235,7 @@
         "name": "怪レい日本语",
         "score": 3,
         "phrases": [
-          "一か八かさん", "与出まし"
+          "一か八かさん", "与出まし","與出まし","本當に"
         ]
     },
     {
@@ -251,6 +251,6 @@
         },
         "required": ["ojosama", "tousi"],
         "bonusThreshold": 2,
-        "bonusScore": 4
+        "bonusScore": 8
       }
   ]
